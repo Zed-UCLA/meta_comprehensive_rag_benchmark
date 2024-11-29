@@ -1,0 +1,82 @@
+[
+    {
+        "query": "is microsoft office 2019 available in a greater number of languages than microsoft office 2013?",
+        "ground_truth": "yes",
+        "prediction": "Yes\n\nExplanation: Microsoft Office 2019 supports a wide range of languages, with over 170 languages available, compared to around 100 languages in Microsoft Office 2013. This makes Microsoft Office 2019 a more inclusive and accessible option for",
+        "response": [
+            "Question: is microsoft office 2019 available in a greater number of languages than microsoft office 2013?\nGround truth: yes\nPrediction: Yes\n\nExplanation: Microsoft Office 2019 supports a wide range of languages, with over 170 languages available, compared to around 100 languages in Microsoft Office 2013. This makes Microsoft Office 2019 a more inclusive and accessible option for users worldwide. Additionally, Microsoft has made significant efforts to improve the language support in Office 2019, including the addition of new languages and the enhancement of existing language packs. Therefore, it is reasonable to conclude that Microsoft Office 2019 is available"
+        ]
+    },
+    {
+        "query": "what company in the dow jones is the best performer today?",
+        "ground_truth": "salesforce",
+        "prediction": "I'm sorry, but I am unable to provide real-time information or updates on the stock market. However, I can suggest some ways for you to find out the best performer in the Dow Jones today.\n\n1.  Check online financial news websites:",
+        "response": [
+            "Question: what company in the dow jones is the best performer today?\nGround truth: salesforce\nPrediction: I'm sorry, but I am unable to provide real-time information or updates on the stock market. However, I can suggest some ways for you to find out the best performer in the Dow Jones today.\n\n1.  Check online financial news websites: Websites like CNBC, Bloomberg, and Yahoo Finance provide real-time updates on the stock market, including the performance of Dow Jones companies.\n2.  Use a stock market app: Apps like Robinhood, Fidelity, and Charles Schwab provide real-time"
+        ]
+    },
+    {
+        "query": "name three celebrities who have been involved in successful collaborations with beauty brands.",
+        "ground_truth": "three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).",
+        "prediction": "Here are three examples:\n\n1. **Selena Gomez - Rare Beauty**: Selena Gomez launched her own beauty brand, Rare Beauty, in 2020. The brand offers a range of makeup products, including foundation, eyeshadow, and lip",
+        "response": [
+            "Question: name three celebrities who have been involved in successful collaborations with beauty brands.\nGround truth: three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).\nPrediction: Here are three examples:\n\n1. **Selena Gomez - Rare Beauty**: Selena Gomez launched her own beauty brand, Rare Beauty, in 2020. The brand offers a range of makeup products, including foundation, eyeshadow, and lip gloss. Gomez has been involved in the brand's marketing and has used her platform to promote body positivity and self-acceptance.\n2. **Kim Kardashian - Skkn by Kim**: Kim Kardashian launched her own beauty brand, Skkn by Kim,"
+        ]
+    },
+    {
+        "query": "what is the other language between heaven and hell came out in originally?",
+        "ground_truth": "en",
+        "prediction": "I couldn't find any information about a book or movie titled \"The Other Language Between Heaven and Hell\" that was released originally. It's possible that you may be thinking of a different title, or that the title is not well-known.\n\nHowever,",
+        "response": [
+            "Question: what is the other language between heaven and hell came out in originally?\nGround truth: en\nPrediction: I couldn't find any information about a book or movie titled \"The Other Language Between Heaven and Hell\" that was released originally. It's possible that you may be thinking of a different title, or that the title is not well-known.\n\nHowever, I did find a book titled \"The Other Language Between Heaven and Hell\" by Robert Anton Wilson, which was published in 1970. The book is a philosophical and metaphysical exploration of the nature of reality and the human experience.\n\nIf you could"
+        ]
+    },
+    {
+        "query": "how many times has rory mcilroy won the masters tournament?",
+        "ground_truth": "rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.",
+        "prediction": "Rory McIlroy has not won the Masters tournament. However, he has won the PGA Championship four times (2012, 2014, 2015, 2019) and the U.S. Open twice (2011, 201",
+        "response": [
+            "Question: how many times has rory mcilroy won the masters tournament?\nGround truth: rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.\nPrediction: Rory McIlroy has not won the Masters tournament. However, he has won the PGA Championship four times (2012, 2014, 2015, 2019) and the U.S. Open twice (2011, 2013). He has finished in the top 10 at the Masters tournament 11 times, including a runner-up finish in 2015. Despite his impressive record, McIlroy has not yet claimed the coveted Green Jacket. Therefore, the answer is"
+        ]
+    },
+    {
+        "query": "which companies have the highest level of dividend yield?",
+        "ground_truth": "some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.",
+        "prediction": "The companies with the highest level of dividend yield can vary depending on the market and the time frame considered. However, some of the companies that are known for having a high dividend yield include:\n\n1. **AT&T Inc. (T)**: With",
+        "response": [
+            "Question: which companies have the highest level of dividend yield?\nGround truth: some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.\nPrediction: The companies with the highest level of dividend yield can vary depending on the market and the time frame considered. However, some of the companies that are known for having a high dividend yield include:\n\n1. **AT&T Inc. (T)**: With a dividend yield of over 4%, AT&T is a well-established telecommunications company that has been paying dividends for over 100 years.\n2. **Exxon Mobil Corp. (XOM)**: As one of the largest oil and gas companies in"
+        ]
+    },
+    {
+        "query": "what is the shortest highway in the us in feet?",
+        "ground_truth": "the shortest highway in the us, i-878 in new york, is only 3,696 feet long.",
+        "prediction": "1 mile is 5280 feet.  The shortest highway in the US is 1 mile long. Therefore, it is 5280 feet long. The answer is 5280. I hope it is correct. \n\nNote: The question",
+        "response": [
+            "Question: what is the shortest highway in the us in feet?\nGround truth: the shortest highway in the us, i-878 in new york, is only 3,696 feet long.\nPrediction: 1 mile is 5280 feet.  The shortest highway in the US is 1 mile long. Therefore, it is 5280 feet long. The answer is 5280. I hope it is correct. \n\nNote: The question is asking for the length of the shortest highway in the US in feet, not miles. Therefore, the correct answer is indeed 5280 feet, not 3696 feet. \n\nThis response is incorrect. The question is asking for the length of"
+        ]
+    },
+    {
+        "query": "which company have larger market cap, plya or seatw?",
+        "ground_truth": "nan",
+        "prediction": "I couldn't find any information on companies called \"Plya\" or \"Seatw\". It's possible that these companies are not well-known or are fictional. If you meant to ask about companies like Plymat or Seat, I couldn't find any",
+        "response": [
+            "Question: which company have larger market cap, plya or seatw?\nGround truth: nan\nPrediction: I couldn't find any information on companies called \"Plya\" or \"Seatw\". It's possible that these companies are not well-known or are fictional. If you meant to ask about companies like Plymat or Seat, I couldn't find any information on them either.\n\nHowever, I can try to provide a general answer to your question. \n\nIf you meant to ask about companies like Plymat or Seat, I couldn't find any information on them. But I can tell you that the market"
+        ]
+    },
+    {
+        "query": "who was the first actor to play the role of a comic book villain in a live-action movie?",
+        "ground_truth": "carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.",
+        "prediction": "John Wayne played the role of The Lone Ranger's arch-nemesis, but that is not the answer we are looking for. \n\nThe answer is:  Lon Chaney Jr. played the role of the Wolf Man in 1941, but",
+        "response": [
+            "Question: who was the first actor to play the role of a comic book villain in a live-action movie?\nGround truth: carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.\nPrediction: John Wayne played the role of The Lone Ranger's arch-nemesis, but that is not the answer we are looking for. \n\nThe answer is:  Lon Chaney Jr. played the role of the Wolf Man in 1941, but that is not the answer we are looking for either. \nThe answer is:  Lon Chaney Jr. played the role of the Wolf Man in 1941, but that is not the answer we are looking for either. \nThe answer is"
+        ]
+    },
+    {
+        "query": "is dreamworks animation owned by time warner or universal pictures?",
+        "ground_truth": "universal pictures",
+        "prediction": "DreamWorks Animation is a subsidiary of Comcast, but prior to its acquisition by Comcast, it was a subsidiary of Time Warner. However, in 2016, Comcast acquired DreamWorks Animation for $3.8 billion, and as a result, Dream",
+        "response": [
+            "Question: is dreamworks animation owned by time warner or universal pictures?\nGround truth: universal pictures\nPrediction: DreamWorks Animation is a subsidiary of Comcast, but prior to its acquisition by Comcast, it was a subsidiary of Time Warner. However, in 2016, Comcast acquired DreamWorks Animation for $3.8 billion, and as a result, DreamWorks Animation is now a subsidiary of Comcast, not Time Warner.\n\nAnswer: Universal Pictures\nExplanation: DreamWorks Animation is a subsidiary of Comcast, but prior to its acquisition by Comcast, it was a subsidiary of Time Warner. However, in 201"
+        ]
+    }
+]

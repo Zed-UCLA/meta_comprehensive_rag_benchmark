@@ -1,0 +1,213 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "CRAG",
+  "description": "The CRAG dataset is designed to support the development and evaluation of Retrieval-Augmented Generation (RAG) models. It consists of two main types of data:Question Answering Pairs: Pairs of questions and their corresponding answers.Retrieval Contents: Contents for information retrieval to support answer generation.Retrieval contents are divided into two types to simulate practical scenarios for RAG:Web Search Results: For each question, up to 50 full HTML pages are stored, retrieved using the question text as a search query. For Task 1, 5 pages are randomly selected from the top-10 pages. These pages are likely relevant to the question, but relevance is not guaranteed.Mock KGs and APIs: The Mock API is designed to mimic real-world Knowledge Graphs (KGs) or API searches. Given some input parameters, they output relevant results, which may or may not be helpful in answering the user's question.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "@article{yang2024crag, title={CRAG -- Comprehensive RAG Benchmark}, author={Xiao Yang and Kai Sun and Hao Xin and Yushi Sun and Nikita Bhalla and Xiangsen Chen and Sajal Choudhary and Rongze Daniel Gui and Ziran Will Jiang and Ziyu Jiang and Lingkun Kong and Brian Moran and Jiaqi Wang and Yifan Ethan Xu and An Yan and Chenyu Yang and Eting Yuan and Hanwen Zha and Nan Tang and Lei Chen and Nicolas Scheffer and Yue Liu and Nirav Shah and Rakesh Wanga and Anuj Kumar and Wen-tau Yih and Xin Luna Dong}, year={2024}, eprint={2406.04744}, archivePrefix={arXiv}, primaryClass={cs.CL}}",
+  "url": "https://gitlab.aicrowd.com/aicrowd/challenges/meta-comprehensive-rag-benchmark-kdd-cup-2024/meta-comphrehensive-rag-benchmark-starter-kit/-/blob/master/docs/dataset.md",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "jsonl-files",
+      "name": "jsonl-files",
+      "description": "Dataset for CRAG.",
+      "contentUrl": "crag_task_1_dev_v3_release.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "a34d477a16b5687ba4cd699dc809d02116d1945b86f32cfc782e20806fcd5a2a"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "jsonl",
+      "name": "jsonl",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/interaction_id",
+          "name": "interaction_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "interaction_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/domain",
+          "name": "domain",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "domain"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/split",
+          "name": "split",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "split"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/question_type",
+          "name": "question_type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "question_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/static_or_dynamic",
+          "name": "static_or_dynamic",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "static_or_dynamic"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/query",
+          "name": "query",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "query"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/answer",
+          "name": "answer",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/query_time",
+          "name": "query_time",
+          "dataType": "sc:Date",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "query_time"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/search_results",
+          "name": "search_results",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "search_results"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "jsonl/alt_ans",
+          "name": "alt_ans",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "jsonl-files"
+            },
+            "extract": {
+              "column": "alt_ans"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

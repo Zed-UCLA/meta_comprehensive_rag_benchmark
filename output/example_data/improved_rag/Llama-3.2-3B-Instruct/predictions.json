@@ -1,0 +1,38 @@
+{
+    "queries": [
+        "is microsoft office 2019 available in a greater number of languages than microsoft office 2013?",
+        "what company in the dow jones is the best performer today?",
+        "name three celebrities who have been involved in successful collaborations with beauty brands.",
+        "what is the other language between heaven and hell came out in originally?",
+        "how many times has rory mcilroy won the masters tournament?",
+        "which companies have the highest level of dividend yield?",
+        "what is the shortest highway in the us in feet?",
+        "which company have larger market cap, plya or seatw?",
+        "who was the first actor to play the role of a comic book villain in a live-action movie?",
+        "is dreamworks animation owned by time warner or universal pictures?"
+    ],
+    "ground_truths": [
+        "yes",
+        "salesforce",
+        "three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).",
+        "en",
+        "rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.",
+        "some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.",
+        "the shortest highway in the us, i-878 in new york, is only 3,696 feet long.",
+        "nan",
+        "carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.",
+        "universal pictures"
+    ],
+    "predictions": [
+        "Yes\n\nExplanation: Microsoft Office 2019 supports a wide range of languages, with over 170 languages available, compared to around 100 languages in Microsoft Office 2013. This makes Microsoft Office 2019 a more inclusive and accessible option for",
+        "I'm sorry, but I am unable to provide real-time information or updates on the stock market. However, I can suggest some ways for you to find out the best performer in the Dow Jones today.\n\n1.  Check online financial news websites:",
+        "Here are three examples:\n\n1. **Selena Gomez - Rare Beauty**: Selena Gomez launched her own beauty brand, Rare Beauty, in 2020. The brand offers a range of makeup products, including foundation, eyeshadow, and lip",
+        "I couldn't find any information about a book or movie titled \"The Other Language Between Heaven and Hell\" that was released originally. It's possible that you may be thinking of a different title, or that the title is not well-known.\n\nHowever,",
+        "Rory McIlroy has not won the Masters tournament. However, he has won the PGA Championship four times (2012, 2014, 2015, 2019) and the U.S. Open twice (2011, 201",
+        "The companies with the highest level of dividend yield can vary depending on the market and the time frame considered. However, some of the companies that are known for having a high dividend yield include:\n\n1. **AT&T Inc. (T)**: With",
+        "1 mile is 5280 feet.  The shortest highway in the US is 1 mile long. Therefore, it is 5280 feet long. The answer is 5280. I hope it is correct. \n\nNote: The question",
+        "I couldn't find any information on companies called \"Plya\" or \"Seatw\". It's possible that these companies are not well-known or are fictional. If you meant to ask about companies like Plymat or Seat, I couldn't find any",
+        "John Wayne played the role of The Lone Ranger's arch-nemesis, but that is not the answer we are looking for. \n\nThe answer is:  Lon Chaney Jr. played the role of the Wolf Man in 1941, but",
+        "DreamWorks Animation is a subsidiary of Comcast, but prior to its acquisition by Comcast, it was a subsidiary of Time Warner. However, in 2016, Comcast acquired DreamWorks Animation for $3.8 billion, and as a result, Dream"
+    ]
+}

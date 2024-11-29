@@ -1,0 +1,82 @@
+[
+    {
+        "query": "is microsoft office 2019 available in a greater number of languages than microsoft office 2013?",
+        "ground_truth": "yes",
+        "prediction": "is microsoft office 2019 available in a greater number of languages than microsoft office 2013? \nMicrosoft Office 2019 has a wider range of languages available than Microsoft Office 2013. \nMicrosoft Office 2019 is available in 170 languages, while Microsoft Office 2013 was available in 105 languages. \nMicrosoft Office",
+        "response": [
+            "Question: is microsoft office 2019 available in a greater number of languages than microsoft office 2013?\nGround truth: yes\nPrediction: is microsoft office 2019 available in a greater number of languages than microsoft office 2013? \nMicrosoft Office 2019 has a wider range of languages available than Microsoft Office 2013. \nMicrosoft Office 2019 is available in 170 languages, while Microsoft Office 2013 was available in 105 languages. \nMicrosoft Office 2019 supports more languages than Microsoft Office 2013. \nMicrosoft Office 2019 is available in more languages than Microsoft Office 2013. \nMicrosoft Office 2019 supports a greater number of languages than Microsoft Office 2013."
+        ]
+    },
+    {
+        "query": "what company in the dow jones is the best performer today?",
+        "ground_truth": "salesforce",
+        "prediction": "what company in the dow jones is the best performer today? \nAs of the 2023-02-22 16:00:00 (EST) Dow Jones index is 35,833.21. \nPlease note that the performance of the companies in the Dow Jones is subject to change and may",
+        "response": [
+            "Question: what company in the dow jones is the best performer today?\nGround truth: salesforce\nPrediction: what company in the dow jones is the best performer today? \nAs of the 2023-02-22 16:00:00 (EST) Dow Jones index is 35,833.21. \nPlease note that the performance of the companies in the Dow Jones is subject to change and may not be up-to-date. \nThe companies in the Dow Jones are subject to change, and the performance of the companies may not be reflected in the index. \nThe information provided is based on the data available at the time of the query and may"
+        ]
+    },
+    {
+        "query": "name three celebrities who have been involved in successful collaborations with beauty brands.",
+        "ground_truth": "three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).",
+        "prediction": "name three celebrities who have been involved in successful collaborations with beauty brands. \n1.  Rihanna - Fenty Beauty\n2.  Kylie Jenner - Kylie Cosmetics\n3.  Lady Gaga - Haus Laboratories\n\nThese celebrities have all been successful in their collaborations with beauty brands, creating products that have been well-received",
+        "response": [
+            "Question: name three celebrities who have been involved in successful collaborations with beauty brands.\nGround truth: three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).\nPrediction: name three celebrities who have been involved in successful collaborations with beauty brands. \n1.  Rihanna - Fenty Beauty\n2.  Kylie Jenner - Kylie Cosmetics\n3.  Lady Gaga - Haus Laboratories\n\nThese celebrities have all been successful in their collaborations with beauty brands, creating products that have been well-received by the public and have helped to establish their personal brands. Rihanna's Fenty Beauty line, for example, offers a wide range of products that cater to diverse skin tones, making it a game-changer in the beauty industry. Similarly, Kylie Jenner"
+        ]
+    },
+    {
+        "query": "what is the other language between heaven and hell came out in originally?",
+        "ground_truth": "en",
+        "prediction": "what is the other language between heaven and hell came out in originally? 2019\nThe Other Language: Between Heaven and Hell is a 2019 American supernatural drama film directed by David Robert Mitchell and written by Mitchell and Evan Goldberg. The film stars Michael Pitt, Riley Keough, and Taissa Farmiga.",
+        "response": [
+            "Question: what is the other language between heaven and hell came out in originally?\nGround truth: en\nPrediction: what is the other language between heaven and hell came out in originally? 2019\nThe Other Language: Between Heaven and Hell is a 2019 American supernatural drama film directed by David Robert Mitchell and written by Mitchell and Evan Goldberg. The film stars Michael Pitt, Riley Keough, and Taissa Farmiga. It is a remake of the 2009 South Korean film \"Thirst,\" which was directed by Park Chan-wook and starred Song Kang-ho, Kim Hye-ja, and Kim Soo-hyun. The film follows a priest"
+        ]
+    },
+    {
+        "query": "how many times has rory mcilroy won the masters tournament?",
+        "ground_truth": "rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.",
+        "prediction": "how many times has rory mcilroy won the masters tournament? 0\nRory McIlroy has not won the Masters Tournament. Despite being one of the world's top golfers, he has not yet claimed a major championship at Augusta National. His best finish at the Masters is a tie for second,",
+        "response": [
+            "Question: how many times has rory mcilroy won the masters tournament?\nGround truth: rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.\nPrediction: how many times has rory mcilroy won the masters tournament? 0\nRory McIlroy has not won the Masters Tournament. Despite being one of the world's top golfers, he has not yet claimed a major championship at Augusta National. His best finish at the Masters is a tie for second, which he achieved in 2011. So, the correct answer is 0."
+        ]
+    },
+    {
+        "query": "which companies have the highest level of dividend yield?",
+        "ground_truth": "some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.",
+        "prediction": "which companies have the highest level of dividend yield? 2023\nHere are some of the highest dividend-paying stocks in 2023, with a dividend yield of 5% or higher:\n\n**Please note that dividend yields can fluctuate and may not reflect the current yield.**\n\n1. **",
+        "response": [
+            "Question: which companies have the highest level of dividend yield?\nGround truth: some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.\nPrediction: which companies have the highest level of dividend yield? 2023\nHere are some of the highest dividend-paying stocks in 2023, with a dividend yield of 5% or higher:\n\n**Please note that dividend yields can fluctuate and may not reflect the current yield.**\n\n1. **Hess Midstream LP (HESM)**: 5.14% dividend yield\n2. **Xerox (XRX)**: 5.12% dividend yield\n3. **AT&T Inc. (T)**: 5"
+        ]
+    },
+    {
+        "query": "what is the shortest highway in the us in feet?",
+        "ground_truth": "the shortest highway in the us, i-878 in new york, is only 3,696 feet long.",
+        "prediction": "what is the shortest highway in the us in feet? in terms of distance, the shortest highway in the US is the highway that connects the town of Truth or Consequences, New Mexico to the town of Radium Hot Springs, Montana, which is approximately 2.5 miles long. However, I",
+        "response": [
+            "Question: what is the shortest highway in the us in feet?\nGround truth: the shortest highway in the us, i-878 in new york, is only 3,696 feet long.\nPrediction: what is the shortest highway in the us in feet? in terms of distance, the shortest highway in the US is the highway that connects the town of Truth or Consequences, New Mexico to the town of Radium Hot Springs, Montana, which is approximately 2.5 miles long. However, I am not sure if it is the shortest highway in the US in terms of length in feet.\n\nAnswer: I do not have enough information to accurately answer this question. I can tell you that the shortest highway in the US is I-878 in New"
+        ]
+    },
+    {
+        "query": "which company have larger market cap, plya or seatw?",
+        "ground_truth": "nan",
+        "prediction": "which company have larger market cap, plya or seatw? \nTo determine which company has a larger market cap, we need to look up the current market capitalization of both companies.\n\nAfter conducting a search, I found the following information:\n\n* Plya: Unfortunately, I couldn't find any information on a",
+        "response": [
+            "Question: which company have larger market cap, plya or seatw?\nGround truth: nan\nPrediction: which company have larger market cap, plya or seatw? \nTo determine which company has a larger market cap, we need to look up the current market capitalization of both companies.\n\nAfter conducting a search, I found the following information:\n\n* Plya: Unfortunately, I couldn't find any information on a company called \"Plya\".\n* Seatw: I also couldn't find any information on a company called \"Seatw\".\n\nHowever, I can suggest some possible companies that might match the names:\n\n* Plya: Could be a typo or a miss"
+        ]
+    },
+    {
+        "query": "who was the first actor to play the role of a comic book villain in a live-action movie?",
+        "ground_truth": "carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.",
+        "prediction": "who was the first actor to play the role of a comic book villain in a live-action movie??\nThe answer is: **Burt Lancaster** in \"The Magnificent Seven\" (1960) - but more specifically, his role as **Chico**, a Mexican outlaw and a comic book villain, in the movie \"The Magnificent Seven",
+        "response": [
+            "Question: who was the first actor to play the role of a comic book villain in a live-action movie?\nGround truth: carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.\nPrediction: who was the first actor to play the role of a comic book villain in a live-action movie??\nThe answer is: **Burt Lancaster** in \"The Magnificent Seven\" (1960) - but more specifically, his role as **Chico**, a Mexican outlaw and a comic book villain, in the movie \"The Magnificent Seven\" (1960) is not the answer. However, **Burt Lancaster** played the role of **Chico**, a comic book villain, in the movie \"The Magnificent Seven\" (1960), but that is not the answer."
+        ]
+    },
+    {
+        "query": "is dreamworks animation owned by time warner or universal pictures?",
+        "ground_truth": "universal pictures",
+        "prediction": "is dreamworks animation owned by time warner or universal pictures?  Dreamworks Animation was acquired by Comcast (the parent company of NBCUniversal) in 2016 for $3.8 billion.  However, prior to that, Dreamworks Animation was a subsidiary of Paramount Pictures (a subsidiary of ViacomCBS",
+        "response": [
+            "Question: is dreamworks animation owned by time warner or universal pictures?\nGround truth: universal pictures\nPrediction: is dreamworks animation owned by time warner or universal pictures?  Dreamworks Animation was acquired by Comcast (the parent company of NBCUniversal) in 2016 for $3.8 billion.  However, prior to that, Dreamworks Animation was a subsidiary of Paramount Pictures (a subsidiary of ViacomCBS) from 2016 to 2019.  Prior to that, Dreamworks Animation was a subsidiary of Comcast's rival, Time Warner's subsidiary, Warner Bros. Entertainment, from 2010 to 2016.  Therefore, the answer"
+        ]
+    }
+]

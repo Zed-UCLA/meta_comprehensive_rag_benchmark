@@ -1,0 +1,38 @@
+{
+    "queries": [
+        "is microsoft office 2019 available in a greater number of languages than microsoft office 2013?",
+        "what company in the dow jones is the best performer today?",
+        "name three celebrities who have been involved in successful collaborations with beauty brands.",
+        "what is the other language between heaven and hell came out in originally?",
+        "how many times has rory mcilroy won the masters tournament?",
+        "which companies have the highest level of dividend yield?",
+        "what is the shortest highway in the us in feet?",
+        "which company have larger market cap, plya or seatw?",
+        "who was the first actor to play the role of a comic book villain in a live-action movie?",
+        "is dreamworks animation owned by time warner or universal pictures?"
+    ],
+    "ground_truths": [
+        "yes",
+        "salesforce",
+        "three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).",
+        "en",
+        "rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.",
+        "some companies with a high level of dividend yield are hess midstream lp, xerox, and at&t with dividend yields of over 5% each.",
+        "the shortest highway in the us, i-878 in new york, is only 3,696 feet long.",
+        "nan",
+        "carol forman was the first actor to play the role of a comic book villain in a live-action movie, in his iconic portrayal of the spider lady in superman, directed by spencer gordon bennet and thomas carr.",
+        "universal pictures"
+    ],
+    "predictions": [
+        "is microsoft office 2019 available in a greater number of languages than microsoft office 2013? Microsoft Office 2019 is available in 32 languages, while Microsoft Office 2013 is available in 32 languages as well. Microsoft Office 2019 is available in 32 languages, while Microsoft Office 2013 is available in 32",
+        "what company in the dow jones is the best performer today? \nI'll need to know the company name, ticker symbol, and the percentage change in stock price from the previous day.\nPlease provide this information for the 10 best performing companies in the Dow Jones today.\n\nHere is the data for the top ",
+        "name three celebrities who have been involved in successful collaborations with beauty brands. \n1. Rihanna - Fenty Beauty\n2. Kylie Jenner - Kylie Cosmetics\n3. Lady Gaga - Haus Laboratories\n\nThese celebrities have all successfully launched their own beauty brands, creating a wide range of products that cater to their individual styles and",
+        "what is the other language between heaven and hell came out in originally? 2000?\nThe movie \"The Other Language Between Heaven and Hell\" (also known as \"The Other Language\") is a 2000 Hong Kong action film directed by Wong Jing. It stars Chow Yun-fat, Maggie Cheung, and Takes",
+        "how many times has rory mcilroy won the masters tournament? 0\nRory McIlroy has not won the Masters Tournament. Despite being one of the most successful golfers in the world, he has not yet won the Masters, which is one of the four major championships in golf. However, he",
+        "which companies have the highest level of dividend yield? 2023\nHere are some of the companies with the highest dividend yields in 2023, based on data from Yahoo Finance and other sources:\n\n**Dividend Aristocrats:**\n\n1. **AT&T (T)** - 4.14",
+        "what is the shortest highway in the us in feet? in terms of length, the shortest highway in the US is the 1/4 mile long highway in downtown Detroit, Michigan, which is officially known as Jefferson Avenue.\nNow, I have to ask, what is the shortest highway in the US in",
+        "which company have larger market cap, plya or seatw? \nTo determine which company has a larger market cap, we need to look up the current market capitalization of each company.\n\nAfter checking, I found that:\n\n* Plya (a company that I couldn't find any information on) does not have",
+        "who was the first actor to play the role of a comic book villain in a live-action movie??\nI think I can answer that for you!\n\nThe first actor to play a comic book villain in a live-action movie was... (dramatic pause)... **Burt Lancaster** as The Phantom Stranger in the 1940 film \"The",
+        "is dreamworks animation owned by time warner or universal pictures?  DreamWorks Animation was a subsidiary of Paramount Pictures, but it was sold to Comcast (the parent company of NBCUniversal) in 2016.  So, it is currently owned by NBCUniversal.\nSo, to answer your question, DreamWorks"
+    ]
+}
