@@ -161,7 +161,8 @@ class EvaluationModel:
     def evaluate(self, query, ground_truth, prediction):
         if self.use_transformers:
             # Use TransformerModel for evaluation
-            prompts = [f"Question: {query}\nGround truth: {ground_truth}\nPrediction: {prediction}"]
+            prompts = [f"Given the Question, Ground truth and Prediction, you have to decide whether the prediction is true or not.\
+                Answer 'true' is is correct, otherwise 'false'.Question: {query}\nGround truth: {ground_truth}\nPrediction: {prediction}"]
             return self.transformer_model.generate_response(prompts=prompts, max_new_tokens=50)
 
         formatted_prompts = self.format_prompts(query, ground_truth, prediction)
@@ -191,3 +192,6 @@ class EvaluationModel:
                 break
         return None
 
+if __name__ == '__main__':
+    model = EvaluationModel()
+    print(model.transformer_model.generate_response(['hi']))
