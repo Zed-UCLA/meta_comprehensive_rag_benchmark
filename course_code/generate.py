@@ -55,7 +55,7 @@ def load_data_in_batches(dataset_path, batch_size, split=-1):
         raise e
 
 
-def generate_predictions(dataset_path, model, split):
+def generate_predictions(dataset_path, model, split, save_path=None, save_interval=100):
     """
     Processes batches of data from a dataset to generate predictions using a model.
 
@@ -68,6 +68,7 @@ def generate_predictions(dataset_path, model, split):
     """
     queries, ground_truths, predictions = [], [], []
     batch_size = model.get_batch_size()
+    step = 0
 
     for batch in tqdm(load_data_in_batches(dataset_path, batch_size, split), desc="Generating predictions"):
         batch_ground_truths = batch.pop("answer")  # Remove answers from batch and store them
@@ -76,7 +77,10 @@ def generate_predictions(dataset_path, model, split):
         queries.extend(batch["query"])
         ground_truths.extend(batch_ground_truths)
         predictions.extend(batch_predictions)
-
+        step+=1
+        if save_path is not None and step%save_interval==0:
+            json.dump({"queries": queries, "ground_truths": ground_truths, "predictions": predictions},
+              open(os.path.join(save_path, f"predictions_{step}.json"), "w"), indent=4)
     return queries, ground_truths, predictions
 
 
@@ -138,7 +142,7 @@ if __name__ == "__main__":
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server, use_transformers=args.use_transformers)
     elif model_name == "improved_rag":
         from improved_rag import ImprovedRAGModel
-        model = ImprovedRAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server, use_transformers=args.use_transformers)
+        model = ImprovedRAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server, use_transformers=args.use_transformers,batch_size=1)
     # elif model_name == "your_model":
     #     add your model here
     else:
@@ -150,7 +154,7 @@ if __name__ == "__main__":
     os.makedirs(output_directory, exist_ok=True)
 
     # Generate predictions
-    queries, ground_truths, predictions = generate_predictions(dataset_path, model, split)
+    queries, ground_truths, predictions = generate_predictions(dataset_path, model, split, output_directory)
 
     # save predictions
     json.dump({"queries": queries, "ground_truths": ground_truths, "predictions": predictions},

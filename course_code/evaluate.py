@@ -96,7 +96,7 @@ if __name__ == "__main__":
                         help="URL of the vLLM server if is_server is True. The port number may vary.")
     parser.add_argument("--max_retries", type=int, default=10,
                         help="Number of retries for evaluation per query.")
-    parser.add_argument("--use_transformers", action="store_true", default=True,
+    parser.add_argument("--use_transformers", action="store_true", default=False,
                         help="Use transformers model for inference instead of vLLM.")
 
 

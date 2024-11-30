@@ -15,7 +15,8 @@ class ImprovedRAGModel:
                  reranker_model="cross-encoder/ms-marco-MiniLM-L-12-v2",
                  is_server=False,
                  vllm_server=None,
-                 use_transformers=True):
+                 use_transformers=True,
+                 batch_size=1):
         """
         Initialize the retriever, reranker, and generator with flexible backends (vLLM or transformers).
         """
@@ -60,7 +61,8 @@ class ImprovedRAGModel:
                 enforce_eager=True
             )
             self.tokenizer = self.generator.get_tokenizer()
-
+        
+        self.batch_size = batch_size
     def retrieve_contexts(self, queries: List[str], search_results: List[List[Dict]]) -> List[List[str]]:
         """
         Retrieve top contexts using dense retrieval from search results.
@@ -164,4 +166,4 @@ class ImprovedRAGModel:
         """
         Return the batch size to be used for processing queries.
         """
-        return 1
+        return self.batch_size
