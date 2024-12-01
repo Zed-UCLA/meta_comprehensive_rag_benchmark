@@ -8,6 +8,99 @@ from transformer_inference import TransformerModel
 import vllm
 from openai import OpenAI
 
+from transformers import BertTokenizer
+import joblib
+from query_classifier import MultiTaskBERT
+
+# Globals for model, tokenizer, and encoders
+_model = None
+_tokenizer = None
+_label_encoders = None
+
+# load query classifier
+def get_model_and_encoders():
+    global _model, _tokenizer, _label_encoders
+
+    if _model is None or _tokenizer is None or _label_encoders is None:
+        print("Loading model and encoders...")  # This happens only once
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+        # Load tokenizer
+        _tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+        # Load model
+        num_domain_classes = 5
+        _model = MultiTaskBERT(num_domain_classes)
+        _model.load_state_dict(torch.load("multi_task_bert_model.pth"))
+        _model.eval()
+        _model.to(device)
+
+        # Load encoders
+        _label_encoders = {
+            'domain': joblib.load("domain_label_encoder.pkl")
+        }
+
+    return _model, _tokenizer, _label_encoders
+
+# predict the domain of a query
+def predict(query):
+    model, tokenizer, label_encoders = get_model_and_encoders()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Tokenize the query
+    inputs = tokenizer(
+        query,
+        truncation=True,
+        padding='max_length',
+        max_length=128,
+        return_tensors='pt',
+    )
+    inputs = {key: val.to(device) for key, val in inputs.items()}
+
+    # Forward pass
+    with torch.no_grad():
+        domain_logits = model(
+            input_ids=inputs["input_ids"],
+            attention_mask=inputs["attention_mask"]
+        )
+
+    # Decode prediction
+    domain_pred = torch.argmax(domain_logits, dim=1).item()
+    domain_label = label_encoders['domain'].inverse_transform([domain_pred])[0]
+
+    return domain_label
+
+# generate a system prompt based on a predicted domain of a query
+def generate_system_prompt(query):
+    domain = predict(query)  # Assume predict() returns the domain of the query.
+
+    if domain == "finance":
+        return (
+            "You are a financial advisor and analyst. Your goal is to provide "
+            "accurate, detail-oriented answers to questions related to financial data, markets, investments, and economy. "
+            "Use precise terminology and, where appropriate, back your responses with numerical examples or historical context."
+        ) 
+    elif domain == "music":
+        return (
+            "You are a music expert with knowledge of genres, artists, historical influences, and musical theory. "
+            "Provide in-depth answers that may include analysis of music styles, reviews, or historical background."
+        )  
+    elif domain == "movie":
+        return (
+            "You are a movie critic and enthusiast. Your expertise spans different genres, directors, actors, and cinematic techniques. "
+            "Answer questions with thoughtful insights, including plot analysis, film comparisons, and production context."
+        )
+    elif domain == "sports":
+        return (
+            "You are a sports analyst with expertise in various games, players, and competitions. "
+            "Provide detailed responses, including statistics, historical achievements, and strategic insights relevant to the query."
+        )
+    else:  # Open domain
+        return (
+            "You are a knowledgeable assistant capable of providing clear, concise, and accurate answers to a wide variety of topics. "
+            "When specific information is needed, refer to reliable sources and ensure your response is well-structured."
+        )
+
 
 class ImprovedRAGModel:
     def __init__(self, llm_name="meta-llama/Llama-3.2-3B-Instruct",
@@ -104,7 +197,7 @@ class ImprovedRAGModel:
         max_context_length = 1024  # Define maximum context length
         input_text = "\n".join([f"Context: {context}" for context in contexts[:3]])
         input_text = f"{input_text[:max_context_length]}\n\nQuestion: {query}\n\nAnswer:"
-
+        system_prompt = generate_system_prompt(query)
         if self.use_transformers:
             # Generate with transformers
             raw_output = self.generator.generate_response([input_text], max_new_tokens=50, temperature=0.5, top_p=0.8)[0]
@@ -119,7 +212,7 @@ class ImprovedRAGModel:
             response = self.generator.chat.completions.create(
                 model=self.llm_name,
                 messages=[
-                    {"role": "system", "content": "Provide a concise and accurate response."},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": input_text}
                 ],
                 max_tokens=50,
@@ -167,3 +260,4 @@ class ImprovedRAGModel:
         Return the batch size to be used for processing queries.
         """
         return self.batch_size
+
