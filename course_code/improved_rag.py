@@ -100,13 +100,19 @@ class ImprovedRAGModel:
         """
         Generate an answer using the selected backend.
         """
+        if len(contexts)==0:
+            return "I don't know."
+        
         # Format input as a structured prompt with limited context length
         max_context_length = 1024  # Define maximum context length
+        system_prompt = "You are provided with a question and various references. Your task is to answer the question succinctly, using the fewest words possible. If the references do not contain the necessary information to answer the question, respond with 'I don't know'."
         input_text = "\n".join([f"Context: {context}" for context in contexts[:3]])
-        input_text = f"{input_text[:max_context_length]}\n\nQuestion: {query}\n\nAnswer:"
+        input_text += f"{input_text[:max_context_length]}\n\nQuestion: {query}\n\nAnswer:"
+        
 
         if self.use_transformers:
             # Generate with transformers
+            input_text = f"{system_prompt}\n{input_text}"
             raw_output = self.generator.generate_response([input_text], max_new_tokens=50, temperature=0.5, top_p=0.8)[0]
 
             # Post-process the output to clean unnecessary text
@@ -119,7 +125,7 @@ class ImprovedRAGModel:
             response = self.generator.chat.completions.create(
                 model=self.llm_name,
                 messages=[
-                    {"role": "system", "content": "Provide a concise and accurate response."},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": input_text}
                 ],
                 max_tokens=50,
