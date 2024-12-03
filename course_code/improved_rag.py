@@ -8,6 +8,7 @@ from transformer_inference import TransformerModel
 import vllm
 from openai import OpenAI
 
+from loguru import logger
 
 class ImprovedRAGModel:
     def __init__(self, llm_name="meta-llama/Llama-3.2-3B-Instruct",
@@ -63,6 +64,7 @@ class ImprovedRAGModel:
             self.tokenizer = self.generator.get_tokenizer()
         
         self.batch_size = batch_size
+    
     def retrieve_contexts(self, queries: List[str], search_results: List[List[Dict]]) -> List[List[str]]:
         """
         Retrieve top contexts using dense retrieval from search results.
@@ -73,7 +75,7 @@ class ImprovedRAGModel:
             query_embedding = self.retriever.encode(query, convert_to_tensor=True, batch_size=self.retriever_batch_size)
             passage_embeddings = self.retriever.encode(passages, convert_to_tensor=True, batch_size=self.retriever_batch_size)
             scores = torch.cosine_similarity(query_embedding, passage_embeddings, dim=-1).cpu().numpy()
-            top_indices = scores.argsort()[-5:][::-1]  # Top 5
+            top_indices = scores.argsort()[::-1] 
             # Limit passage length to 512 characters and clean HTML
             limited_passages = [
                 BeautifulSoup(passages[i][:512], "lxml").get_text() for i in top_indices
@@ -88,12 +90,13 @@ class ImprovedRAGModel:
         if not contexts:
             return []
         scores = self.reranker.predict([(query, context) for context in contexts])
-        ranked_contexts = [context for _, context in sorted(zip(scores, contexts), reverse=True)]
 
-        # Filter out low-scoring contexts
-        threshold = max(scores) * 0.6  # Discard contexts with scores < 60% of the highest
-        ranked_contexts = [context for context, score in zip(ranked_contexts, scores) if score >= threshold]
-
+        # minmax normalization, insure all scores are positive
+        scores -= min(scores)
+        threshold = max(scores) * 0.6
+        
+        ranked_contexts = [context for score, context in sorted(zip(scores, contexts), reverse=True) if score >= threshold]
+        
         return ranked_contexts[:5]  # Limit to top 5
 
     def generate_answer(self, query: str, contexts: List[str]) -> str:
@@ -150,11 +153,17 @@ class ImprovedRAGModel:
         answers = []
 
         for query, results in zip(queries, search_results):
+            if len(results)==0:
+                logger.warning("Search result is empty.")
             # Step 1: Retrieve relevant contexts
             contexts = self.retrieve_contexts([query], [results])[0]
+            if len(contexts)==0:
+                logger.warning("Retrived context is empty.")
 
             # Step 2: Rerank the contexts
             contexts = self.rerank_contexts(query, contexts)
+            if len(contexts)==0:
+                logger.warning("Reranked context is empty.")
 
             # Step 3: Generate the answer
             answer = self.generate_answer(query, contexts)
